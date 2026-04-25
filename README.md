@@ -1,10 +1,26 @@
 # WFD Pro Clock Controller
 
-A reverse-engineered Python controller and web UI for the **WFD Pro PUNKCYBER** 7×7 LED matrix clock with system monitoring, animation editor, and more.
+**Open-source Python controller and web UI for the WFD Pro PUNKCYBER 7×7 LED matrix desktop clock** — reverse-engineered serial protocol, system monitor (CPU/GPU/RAM bars), 20+ pixel animations, VU meter control, and more. The only English-language tool for this clock.
 
 <p align="center">
   <img src="images/clock.jpg" alt="WFD Pro PUNKCYBER Clock" width="500">
 </p>
+
+<!--
+SEO / Search Keywords:
+WFD Pro clock, PUNKCYBER clock, WFD Pro PUNKCYBER, WFD clock software, WFD Pro English,
+WFD clock controller, WFD Pro配置软件 English, WFD Pro configuration software,
+7x7 LED matrix clock, LED dot matrix clock, pixel clock, desktop LED clock,
+CH340 clock, CH341 USB clock, serial LED clock, USB LED matrix,
+WFD clock protocol, WFD Pro serial protocol, WFD clock reverse engineer,
+WFD clock Python, WFD clock open source, WFD Pro GitHub,
+LED clock system monitor, LED clock CPU monitor, desktop clock GPU monitor,
+LED clock animation, pixel art clock, retro LED clock, cyberpunk desk clock,
+WFD clock VU meter, audio visualizer clock, sound reactive LED clock,
+WFD Pro app, WFD clock app, WFD clock Windows, WFD Pro alternative software,
+punkcyber clock software, punk cyber clock, LED matrix controller,
+desktop system monitor hardware, hardware CPU monitor display
+-->
 
 ![WFD Pro Clock](https://img.shields.io/badge/Hardware-WFD%20Pro%20PUNKCYBER-blue)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-yellow)
