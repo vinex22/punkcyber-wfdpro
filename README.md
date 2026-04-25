@@ -25,9 +25,12 @@ desktop system monitor hardware, hardware CPU monitor display
 ![WFD Pro Clock](https://img.shields.io/badge/Hardware-WFD%20Pro%20PUNKCYBER-blue)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 [![Download](https://img.shields.io/badge/Download-Windows%20.exe-blue?style=for-the-badge)](https://github.com/vinex22/punkcyber-wfdpro/releases/latest)
 
-> **💾 Just want to try it?** Download the [**Windows standalone exe**](https://github.com/vinex22/punkcyber-wfdpro/releases/latest) — no Python needed. Extract, run `WFDProClock.exe`, and open http://localhost:5000.
+> **💾 Windows?** Download the [**standalone exe**](https://github.com/vinex22/punkcyber-wfdpro/releases/latest) — no Python needed. Extract, run `WFDProClock.exe`, and open http://localhost:5000.
+>
+> **🍎 macOS / Linux?** Works with Python 3.10+. Install the [CH340 driver](https://www.wch-ic.com/downloads/CH341SER_MAC_ZIP.html), run `pip install -r requirements.txt`, then `python wfd_web.py`. The serial port will show as `/dev/tty.usbserial-*` (macOS) or `/dev/ttyUSB*` (Linux).
 
 > **⚠️ Compatibility Notice:** This software is designed and tested **only** for the **WFD Pro PUNKCYBER** clock model (CH340/CH341 USB serial, 7×7 LED matrix). It will **not** work with other WFD models, generic LED clocks, or similar-looking devices. Using it with incompatible hardware may produce unexpected results or damage settings. If your clock model is different, use at your own risk.
 
