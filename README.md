@@ -232,6 +232,10 @@ The serial protocol was reverse-engineered from the original Chinese configurati
 
 MIT
 
+## Author
+
+Created by **Vinay Jain** — [vinex22@gmail.com](mailto:vinex22@gmail.com) | [vinayjain@microsoft.com](mailto:vinayjain@microsoft.com)
+
 ---
 
 **Disclaimer:** This project is not affiliated with or endorsed by the manufacturer of the WFD Pro clock. The serial protocol was reverse-engineered for personal/educational use. Use at your own risk.
