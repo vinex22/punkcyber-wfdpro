@@ -2,9 +2,15 @@
 
 A reverse-engineered Python controller and web UI for the **WFD Pro PUNKCYBER** 7×7 LED matrix clock with system monitoring, animation editor, and more.
 
+<p align="center">
+  <img src="images/clock.jpg" alt="WFD Pro PUNKCYBER Clock" width="500">
+</p>
+
 ![WFD Pro Clock](https://img.shields.io/badge/Hardware-WFD%20Pro%20PUNKCYBER-blue)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+> **⚠️ Compatibility Notice:** This software is designed and tested **only** for the **WFD Pro PUNKCYBER** clock model (CH340/CH341 USB serial, 7×7 LED matrix). It will **not** work with other WFD models, generic LED clocks, or similar-looking devices. Using it with incompatible hardware may produce unexpected results or damage settings. If your clock model is different, use at your own risk.
 
 ## Features
 
@@ -225,3 +231,7 @@ The serial protocol was reverse-engineered from the original Chinese configurati
 ## License
 
 MIT
+
+---
+
+**Disclaimer:** This project is not affiliated with or endorsed by the manufacturer of the WFD Pro clock. The serial protocol was reverse-engineered for personal/educational use. Use at your own risk.
