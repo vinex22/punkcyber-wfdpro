@@ -9,6 +9,9 @@ A reverse-engineered Python controller and web UI for the **WFD Pro PUNKCYBER** 
 ![WFD Pro Clock](https://img.shields.io/badge/Hardware-WFD%20Pro%20PUNKCYBER-blue)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
+[![Download](https://img.shields.io/badge/Download-Windows%20.exe-blue?style=for-the-badge)](https://github.com/vinex22/punkcyber-wfdpro/releases/latest)
+
+> **💾 Just want to try it?** Download the [**Windows standalone exe**](https://github.com/vinex22/punkcyber-wfdpro/releases/latest) — no Python needed. Extract, run `WFDProClock.exe`, and open http://localhost:5000.
 
 > **⚠️ Compatibility Notice:** This software is designed and tested **only** for the **WFD Pro PUNKCYBER** clock model (CH340/CH341 USB serial, 7×7 LED matrix). It will **not** work with other WFD models, generic LED clocks, or similar-looking devices. Using it with incompatible hardware may produce unexpected results or damage settings. If your clock model is different, use at your own risk.
 
