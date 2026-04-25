@@ -1,0 +1,4 @@
+flask
+psutil
+pyserial
+PyQt5

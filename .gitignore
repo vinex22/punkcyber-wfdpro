@@ -1,0 +1,33 @@
+# Virtual environment
+system_monitor_venv/
+
+# PyInstaller build artifacts
+build/
+dist/
+*.spec
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Reverse engineering artifacts (not needed for the app)
+disasm_full.txt
+methods_disasm.txt
+extract_methods.py
+WFDPro配置软件.exe_extracted/
+
+# Test scripts
+test_bars.py
+
+# Editor/IDE
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Notes
+MEMORY.md
