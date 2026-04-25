@@ -242,3 +242,100 @@ Created by **Vinay Jain** — [vinex22@gmail.com](mailto:vinex22@gmail.com) | [v
 ---
 
 **Disclaimer:** This project is not affiliated with or endorsed by the manufacturer of the WFD Pro clock. The serial protocol was reverse-engineered for personal/educational use. Use at your own risk.
+
+---
+
+# WFD Pro 时钟控制器（中文版）
+
+逆向工程的 Python 控制器和 Web 界面，适用于 **WFD Pro PUNKCYBER** 7×7 LED 点阵时钟，支持系统监控、动画编辑器等功能。
+
+<p align="center">
+  <img src="images/clock.jpg" alt="WFD Pro PUNKCYBER 时钟" width="500">
+</p>
+
+> **⚠️ 兼容性提示：** 本软件仅适用于 **WFD Pro PUNKCYBER** 时钟型号（CH340/CH341 USB 串口，7×7 LED 点阵）。不适用于其他 WFD 型号、通用 LED 时钟或外观相似的设备。使用不兼容的硬件可能会产生意外结果或损坏设置。如果您的时钟型号不同，请自行承担风险。
+
+> **💾 想直接试用？** 下载 [**Windows 独立可执行文件**](https://github.com/vinex22/punkcyber-wfdpro/releases/latest) — 无需安装 Python。解压后运行 `WFDProClock.exe`，打开 http://localhost:5000 即可使用。
+
+## 功能特性
+
+- **Web 界面** — 浏览器控制面板 `http://localhost:5000`
+- **系统监控** — 实时发送 CPU/内存/GPU 使用率到时钟的进度条显示
+- **动画库** — 20+ 内置动画（雨滴、等离子、乒乓、酷霸、太空入侵者等）
+- **LED 点阵编辑器** — 点击绘制 7×7 像素图案并发送到时钟
+- **动画上传** — 上传自定义 `.json` 动画文件
+- **完整时钟控制** — 亮度、灵敏度、显示模式、12h/24h、夜间模式、时间同步
+- **命令行界面** — 通过 `wfd_clock.py` 进行命令行控制
+- **恢复出厂设置** — 出现问题时恢复时钟默认设置
+
+## 快速开始
+
+### 1. 安装依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. 运行 Web 界面
+
+```bash
+python wfd_web.py
+```
+
+在浏览器中打开 **http://localhost:5000**，选择串口，点击 **Connect** 即可。
+
+### 3. 或使用命令行
+
+```bash
+python wfd_clock.py
+```
+
+## 串口协议
+
+所有命令以头字节 `0xAA`（170）开始，后跟命令字节。
+
+| 命令 | 十六进制 | 载荷 | 说明 |
+|------|----------|------|------|
+| 1 | `0x01` | `<总帧数> <帧序号> <7个行字节> <时间槽>` | 发送动画帧 |
+| 2 | `0x02` | `<等级 1-5>` | 设置 VU 表灵敏度 |
+| 3 | `0x03` | `<模式 1-4>` | 设置显示过渡模式 |
+| 4 | `0x04` | `<cpu%> <mem%> <gpu%>` | 发送系统状态到进度条 |
+| 5 | `0x05` | `<年-2000> <月> <日> <时> <分> <秒>` | 同步时钟时间 |
+| 6 | `0x06` | `<开始时> <开始分> <结束时> <结束分>` | 设置夜间模式（全零=禁用） |
+| 7 | `0x07` | `<等级 1-4>` | 设置 LED 亮度 |
+| 8 | `0x08` | `<0 或 1>` | 小时模式（0=24h，1=12h） |
+| 9 | `0x09` | *（无）* | 请求当前设备设置 |
+
+## 恢复出厂设置
+
+如果 VU 表或其他功能停止工作：
+
+```bash
+python reset_clock.py
+```
+
+然后拔掉 USB，等待 3 秒，重新插入。
+
+## 构建独立 .exe
+
+```bash
+pip install pyinstaller
+pyinstaller --name WFDProClock --onedir --noconfirm \
+  --add-data "matrix;matrix" --add-data "wfd_clock.py;." \
+  --hidden-import psutil --hidden-import serial \
+  --collect-submodules serial wfd_web.py
+```
+
+输出：`dist/WFDProClock/WFDProClock.exe`
+
+## 重要提示
+
+- **VU 表：** 内置音频 VU 表仅在没有串口连接时工作。配置设置后断开连接即可恢复。
+- **安全命令：** 仅使用命令 `0x01`–`0x09`。发送未知命令字节（0x0A+）可能损坏时钟设置并禁用 VU 表。使用 `reset_clock.py` 修复。
+- **系统状态条：** 需要每 2-3 秒持续发送以保持稳定。如果不刷新，数值会漂移。
+
+## 作者
+
+由 **Vinay Jain** 创建 — [vinex22@gmail.com](mailto:vinex22@gmail.com) | [vinayjain@microsoft.com](mailto:vinayjain@microsoft.com)
+
+**免责声明：** 本项目与 WFD Pro 时钟制造商无关，也未获其认可。串口协议是为个人/教育目的逆向工程而来。使用风险自负。
