@@ -244,6 +244,10 @@ The serial protocol was reverse-engineered from the original Chinese configurati
 - Python `dis` module to disassemble bytecode
 - Manual protocol testing via serial
 
+## Original Vendor Files
+
+The `Original/` directory contains the original vendor-provided WFD Pro configuration software and stock animation files (`matrix/*.json`) found on the internet. These are included for reference and reverse-engineering purposes only — all rights to those files belong to their original authors/vendor.
+
 ## Important Notes
 
 - **VU Meter:** The built-in audio VU meter only works when no serial connection is active. Disconnect after configuring settings to restore it.
@@ -346,6 +350,10 @@ pyinstaller --name WFDProClock --onedir --noconfirm \
 ```
 
 输出：`dist/WFDProClock/WFDProClock.exe`
+
+## 原厂文件
+
+`Original/` 目录包含从互联网上找到的原厂 WFD Pro 配置软件和官方动画文件（`matrix/*.json`），由厂商提供。仅供参考和逆向工程使用 — 这些文件的所有权归原作者/厂商所有。
 
 ## 重要提示
 
